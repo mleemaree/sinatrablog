@@ -13,26 +13,15 @@ class Blog
 		threes = sorted_posts.each_slice(3).to_a
 		user_order = ''
 		while(user_order != 'exit')
-			require 'colorize'
 			if @index == 0
 				@index = user_order.to_i - 1
 			else
 				@index = user_order.to_i - 1
 			end
-			threes[@index].each do |post|
-				if post.sponsored
-					puts "*********#{post.title}*****"
-					puts "**************"
-					puts post.text
-					puts "--------------"
-				else
-					puts post.title
-					puts "**************"
-					puts post.text
-					puts "--------------"
 
-				end
-			end
+			@sponsored = post.sponsored
+			@post_title = post.title
+		
 			threes.each_with_index do |posts, page| 
 				if @index  == page 
 					print (page+1).to_s.colorize(:red) + " "

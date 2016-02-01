@@ -6,6 +6,7 @@ group :development do
 	gem 'sinatra-bootstrap', :require => 'sinatra/bootstrap'
 	gem "guard"
 	gem "guard-rspec"
+	gem "colorize"
 end
 
 group :test do
